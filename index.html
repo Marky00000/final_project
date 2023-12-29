@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(120deg, #2ecc71, #3498db);
+            color: #fff;
+            text-align: center;
+            background-image: url('landing-background.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 350px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        form {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: floatUp 1s ease forwards, fadeInAnimation 1s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInAnimation {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        button {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+            opacity: 1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            display: block;
+            color: #ed4956;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .cancel-button {
+            background-color: #ed4956;
+            margin-bottom: 10px;
+        }
+
+        .cancel-button:hover {
+            background-color: #c7424e;
+        }
+
+        .separator {
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .or {
+            background-color: #fff;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 10px;
+            color: #8e8e8e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="https://siaappdevfinal.brunswicksteel-admin.com/SECRET/EJANO/login.php?fbclid=IwAR0FTDpF7SZpNIUF1amoq8Q-DaYR32_Kwc7XXL9fDdFgDAFMDDmyXAUUros" method="post">
+            <div class="login-container">
+                <label>Login form</label>
+                <input type="text" name="username_or_email" placeholder="Username or Email">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit">Log In</button>
+                <button type="button" class="cancel-button" onclick="cancelLogin()">Cancel</button>
+                <a href="https://siaappdevfinal.brunswicksteel-admin.com/SECRET/EJANO/register.html?fbclid=IwAR0FTDpF7SZpNIUF1amoq8Q-DaYR32_Kwc7XXL9fDdFgDAFMDDmyXAUUros" style="color: #2ecc71;">Register</a>
+            </div>
+        </form>
+        <div class="separator"></div>
+    </div>
+
+    <script>
+        function cancelLogin() {
+            console.log('Login cancelled');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
